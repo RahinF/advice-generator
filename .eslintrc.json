@@ -3,5 +3,10 @@
     "next/core-web-vitals",
     "plugin:testing-library/react",
     "plugin:jest-dom/recommended"
-  ]
+  ],
+  "plugins": ["@tanstack/query"],
+  "rules": {
+    "@tanstack/query/exhaustive-deps": "error",
+    "@tanstack/query/prefer-query-object-syntax": "error"
+  }
 }

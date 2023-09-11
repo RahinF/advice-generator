@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        round: '0 0 35px 1px',
+      },
       colors: {
         primary: {
           'light-cyan': 'hsl(193, 38%, 86%)',
@@ -15,7 +18,7 @@ const config: Config = {
         },
         neutral: {
           'grayish-blue': 'hsl(217, 19%, 38%)',
-          'dark-Grayish-blue': 'hsl(217, 19%, 24%)',
+          'dark-grayish-blue': 'hsl(217, 19%, 24%)',
           'dark-blue': 'hsl(218, 23%, 16%)',
         },
       },
