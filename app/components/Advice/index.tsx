@@ -25,9 +25,9 @@ const Advice = () => {
   return (
     <main>
       <div className="bg-neutral-dark-blue h-screen grid place-items-center px-4">
-        <div className="bg-neutral-dark-grayish-blue max-w-lg rounded-2xl w-full relative grid items-center">
+        <div className="bg-neutral-dark-grayish-blue max-w-lg rounded-2xl w-full relative grid items-center h-72">
           {isFetching ? (
-            <div className="flex flex-col items-center gap-6 py-20">
+            <div className="flex flex-col items-center gap-6">
               <Circles
                 height="80"
                 width="80"

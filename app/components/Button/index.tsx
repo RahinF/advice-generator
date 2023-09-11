@@ -8,18 +8,22 @@ interface Props {
 
 const Button = ({ onClick, isFetching }: Props) => {
   const fetchOnClick = () => {
-    !isFetching && onClick();
+    onClick();
   };
+
   return (
     <button
       onClick={fetchOnClick}
+      disabled={isFetching}
       className={clsx(
         [
           'absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2',
           'transition duration-500',
-          'bg-primary-neon-green p-5 rounded-full',
+          ' p-5 rounded-full',
         ],
         {
+          'bg-primary-neon-green': !isFetching,
+          'bg-neutral-grayish-blue': isFetching,
           'hover:shadow-primary-neon-green hover:shadow-round': !isFetching,
         },
       )}
@@ -29,6 +33,7 @@ const Button = ({ onClick, isFetching }: Props) => {
         alt="dice icon"
         width={24}
         height={24}
+        className="pointer-events-none"
       />
     </button>
   );
