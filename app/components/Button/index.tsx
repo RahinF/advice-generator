@@ -2,18 +2,14 @@ import clsx from 'clsx';
 import Image from 'next/image';
 
 interface Props {
-  onClick: () => void;
+  refetch: () => void;
   isFetching: boolean;
 }
 
-const Button = ({ onClick, isFetching }: Props) => {
-  const fetchOnClick = () => {
-    onClick();
-  };
-
+const Button = ({ refetch, isFetching }: Props) => {
   return (
     <button
-      onClick={fetchOnClick}
+      onClick={refetch}
       disabled={isFetching}
       className={clsx(
         [

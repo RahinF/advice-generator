@@ -2,25 +2,11 @@ import AdviceNumber from '@components/AdviceNumber';
 import AdviceText from '@components/AdviceText';
 import Button from '@components/Button';
 import PatternDivider from '@components/PatternDivider';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import Spinner from '../Spinner';
-
-const getAdvice = async () =>
-  await axios
-    .get('https://api.adviceslip.com/advice')
-    .then((result) => result.data);
+import Spinner from '@components/Spinner';
+import useAdviceHook from '@hooks/useAdviceHook';
 
 const Advice = () => {
-  const { data, isFetching, refetch } = useQuery({
-    queryKey: ['advice'],
-    queryFn: getAdvice,
-    enabled: true,
-  });
-
-  const getAdviceOnClick = () => {
-    refetch();
-  };
+  const { data, isFetching, refetch } = useAdviceHook();
 
   return (
     <main>
@@ -38,7 +24,7 @@ const Advice = () => {
             </div>
           )}
           <Button
-            onClick={getAdviceOnClick}
+            refetch={refetch}
             isFetching={isFetching}
           />
         </div>
